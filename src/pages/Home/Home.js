@@ -20,7 +20,7 @@ const Home = () => {
     <div>
       <Navbar></Navbar>
       {/* <PostCard></PostCard> */}
-      <div className="px-16 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="px-6 py-5 lg:px-16 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {posts?.data?.map((post) => (
           <PostCard key={post.id} post={post}></PostCard>
         ))}

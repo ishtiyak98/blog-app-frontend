@@ -1,4 +1,6 @@
-import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { AiOutlineComment } from "react-icons/ai";
@@ -6,8 +8,16 @@ import { useNavigate } from "react-router-dom";
 
 const PostCard = ({ post }) => {
   const navigate = useNavigate();
+  useEffect(() => {
+    Aos.init({
+      duration: 400,
+      offset: 30,
+    });
+  }, []);
+
   return (
     <div
+      data-aos="zoom-in"
       className="space-y-4 cursor-pointer hover:scale-105 transition-transform ease-in-out duration-300 hover:shadow-xl p-6"
       onClick={() => {
         navigate(`/posts/${post.id}`);
